@@ -4,7 +4,7 @@ uuid: ccad3321-ffec-4ae3-986e-61661c51c6d1
 type: docker
 onboot:
 - name: spi-loader
-  uuid: 11f03ab7-4050-4c71-a2b7-2959843116a6
+  uuid: 21f03ab7-4050-4c71-a2b7-2959843116a6
   image: ""
   directory: gadget-spi-loader
   net: ""
@@ -14,7 +14,7 @@ onboot:
   capabilities: ['SYS_RAWIO']
   devices: []
 - name: module-loader
-  uuid: 6dd7186c-c3a1-475b-8a24-55c791cac843
+  uuid: 6d7186c-c3a1-475b-8a24-55c791cac84322
   image: ""
   directory: module-loader
   net: ""
@@ -25,12 +25,13 @@ onboot:
   devices: []
 services:
 - name: fbcon
-  uuid: 80062403-f3c2-475d-91b0-637bec3d7b77
+  uuid: 80062403-f3c2-475d-91b0-637bec3d7b72
   image:
   directory: fbcon
   net: ""
   readonly: false
-  command: ['/sbin/getty', '9600', 'tty1']
+  command: ['/getty.sh']
   binds: []
-  capabilities: ['SYS_TTY_CONFIG']
+  #~ capabilities: ['SYS_TTY_CONFIG', 'SYS_RAWIO']
+  capabilities: ['ALL']
   devices: ['/dev/fb0', '/dev/tty1']
