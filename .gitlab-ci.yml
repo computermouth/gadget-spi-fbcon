@@ -7,3 +7,4 @@ build:
   stage: build
   script:
     - ls
+    - echo "time!"
