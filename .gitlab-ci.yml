@@ -8,3 +8,4 @@ build:
   script:
     - ls
     - echo "time!"
+    - echo "third"
